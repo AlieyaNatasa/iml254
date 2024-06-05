@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MY PERSONAL WEBSITE</title>
+<style>
+    * {box-sizing: border-box;}
+
+    .slideshow-container {
+        position: relative;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .slides {
+        display: none;
+    }
+
+    .slides img {
+        width: 50%;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        user-select: none;
+        transform: translateY(-50%); /* Centers the arrows vertically */
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+        left: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+</style>
+</head>
+<style>
+    body {
+        background-image: url('image/latar.jpg');
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed; 
+        background-position: center; 
+    }
+    h3 {
+        font-family: Lato, sans-serif;
+        font-size: 24px;
+        text-align: center;
+    }
+    nav a {
+        font-family: Cinzel, serif;
+        font-size: 18px;
+        margin: 0 10px;
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+
+
+<font face="Lato" size="4">PERSONAL WEBSITE</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font face="Cinzel" size="4">
+        <a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="aboutme.html">ABOUT ME</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="families.html">FAMILIES</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="friends.html">FRIENDS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="education.html">EDUCATIONS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="inspiration.html">INSPIRATIONS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="memories.html">MEMORIES</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </font>
+
+<br /><br /><br /><br />
+<h3 align="center">
+    <font face="Lato" color="#1C2833" size="6">Hi There. Hope you enjoy to know about me!</font>
+</h3>
+
+
+<div class="slideshow-container" align="center">
+
+    <div class="slides fade">
+        <img src="image/home.jpg" alt="Image 1">
+    </div>
+
+    <div class="slides fade">
+        <img src="image/uni.jpg" alt="Image 2">
+    </div>
+
+    <div class="slides fade">
+        <img src="image/falah.jpg" alt="Image 3">
+    </div>
+    
+   
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<br>
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+    }
+
+    let autoSlideIndex = 0;
+    autoShowSlides();
+
+    function autoShowSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        autoSlideIndex++;
+        if (autoSlideIndex > slides.length) {autoSlideIndex = 1}
+
+        slides[autoSlideIndex - 1].style.display = "block";
+
+        setTimeout(autoShowSlides, 5000);  
+    }
+</script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<footer class="w3-container w3-center w3-black w3-xlarge" style="padding: 8px;">
+  <a href="https://www.instagram.com/sya.liey?igsh=MTF3YjlhbHB5aHFkaw%3D%3D&utm_source=qr"><i class="fa fa-instagram"></i></a>
+   <a href="https://github.com/AlieyaNatasa"><i class="fa fa-github"></i></a>
+  <a href="http://www.youtube.com/@nurulalieyanatasaaliassani1682"><i class="fa fa-youtube"></i></a>
+  <p class="w3-medium">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </p>
+  <p style="font-size:14px; color: white;">
+    &copy; 2024 Alieya Natasa. All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>
+
+
